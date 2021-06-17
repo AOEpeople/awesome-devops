@@ -1,0 +1,44 @@
+#
+# This list will be enriched and converted into JSON by running
+#
+#    yarn build-json
+#
+
+categories:
+  - name: Hello World
+    description: Example Category
+    categories:
+    - name: Sub Category
+      items:
+      - github: kreuzwerker/awsu
+      - uri: https://awsu.me
+        github: trek10inc/awsume
+    items:
+    - github: lensapp/lens
+    - name: Dive - An awesome tool
+      github: wagoodman/dive
+    - github: kreuzwerker/awsu
+    - uri: https://awsu.me
+      github: trek10inc/awsume
+    - github: GoogleContainerTools/kaniko
+
+
+  - name: Interesting Articles
+    items:
+    - uri: http://ogp.me/
+    - uri: https://snyk.io
+    - uri: https://servicemesh.es
+    - uri: https://learnk8s.io/kubernetes-resources#service-meshes
+    - uri: https://docs.google.com/spreadsheets/d/1Bxf8VW9n-YyHeBiKdXt6zytOgw2cQlsDnK1gLUvsZ4A/edit#gid=907731238
+    - uri: https://github.com/terraform-aws-modules
+    - github: oauth2-proxy/oauth2-proxy
+    - uri: https://goteleport.com
+    - uri: http://sawers.com/blog/aws-session-manager-a-better-way-to-ssh/
+    - uri: https://chrome.google.com/webstore/detail/aws-extend-switch-roles/jpmkfafbacpgapdghgdpembnojdlgkdl
+      github: tilfinltd/aws-extend-switch-roles
+    - uri: https://www.telepresence.io
+      github: telepresenceio/telepresence
+    - github: aws-controllers-k8s/community
+    - uri: https://kudo.dev
+      github: kudobuilder/kudo
+    - uri: https://www.eksworkshop.com
