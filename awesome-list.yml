@@ -7,12 +7,12 @@
 categories:
   - name: Hello World
     description: Example Category
-    categories:
-    - name: Sub Category
-      items:
-      - github: kreuzwerker/awsu
-      - uri: https://awsu.me
-        github: trek10inc/awsume
+    # categories:
+    # - name: Sub Category
+    #   items:
+    #   - github: kreuzwerker/awsu
+    #   - uri: https://awsu.me
+    #     github: trek10inc/awsume
     items:
     - github: lensapp/lens
     - name: Dive - An awesome tool

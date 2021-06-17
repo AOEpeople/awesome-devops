@@ -17,6 +17,8 @@ import { Chip } from '@material-ui/core';
 import StarIcon from '@material-ui/icons/Star';
 import GavelIcon from '@material-ui/icons/Gavel';
 import ExternalLink from './ExternalLink'
+import { IconButton } from '@material-ui/core';
+import WarningIcon from '@material-ui/icons/Warning';
 
 const useStyles = makeStyles((theme) => ({
   link: {
@@ -28,6 +30,10 @@ export default function ItemForList({ item }) {
   const classes = useStyles()
 
   return (
-    <Typography><ExternalLink href={item.uri} className={classes.link}>{item.name}</ExternalLink> {item.description || ""} </Typography>
+    <Typography>
+      <ExternalLink href={item.uri} className={classes.link}>{item.name}</ExternalLink>{" "}
+      { item.warnings && item.warnings.length > 0 && <><Chip color="default" className={classes.chip} size="small" icon={<WarningIcon />} label={item.warnings.length} title={item.warnings.join(" ")} />{" "}</>}
+      {item.description || ""}
+    </Typography>
   )
 }
