@@ -6,9 +6,6 @@ stages:
   - publish
 
 
-before_script:
-
-
 pages:
   stage: publish
   before_script: []
@@ -17,7 +14,8 @@ pages:
   script:
     - yarn install --frozen-lockfile --cache-folder .yarn
     - yarn build-json
-    - yarn build
+    # CI=false does not let the build fail on warnings
+    - CI=false yarn build
   artifacts:
     paths:
       - build
