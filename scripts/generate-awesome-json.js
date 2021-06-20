@@ -48,7 +48,8 @@ const githubOptions = {
     headers: {
         'Accept': "application/vnd.github.v3+json",
         "User-Agent": "github.com/czenker"
-    }
+    },
+    timeout: 30000
 }
 
 const githubToken = process.env?.GITHUB_TOKEN
@@ -173,7 +174,7 @@ const enrichGithub = async (githubId) => {
  */
 const enrichArticle = async (uri) => {
     console.log('request', uri)
-    return ogs({url: uri}).then(data => {
+    return ogs({url: uri, timeout: 30000}).then(data => {
         const { error, result, response } = data;
         console.log('response', uri)
         if (error) {
