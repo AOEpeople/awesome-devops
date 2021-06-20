@@ -1,3 +1,6 @@
+env:
+  AWS_REGION: eu-central-1
+  AWS_BUCKET_NAME: awesome-devops20210618085129867100000003
 
 default:
   image: node:lts
@@ -16,6 +19,7 @@ pages:
     - yarn build-json
     # CI=false does not let the build fail on warnings
     - CI=false yarn build
+    aws sync ./build "s3://${AWS_BUCKET_NAME}"
   artifacts:
     paths:
       - build

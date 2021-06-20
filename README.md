@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Awesome DevOps
+
+An Awesome List of DevOps tools and topics curated by AOE GmbH.
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
