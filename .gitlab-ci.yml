@@ -1,4 +1,4 @@
-env:
+variables:
   AWS_REGION: eu-central-1
   AWS_BUCKET_NAME: awesome-devops20210618085129867100000003
 
