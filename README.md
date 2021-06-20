@@ -32,6 +32,10 @@ Run
 
 ````bash
 yarn install
+
+# generate src/awesome-list-compiled.json (this is the enriched versoin of awesome-list.yml)
+yarn build-json
+
 yarn start
 ````
 
