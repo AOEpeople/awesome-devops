@@ -11,6 +11,7 @@ import { Chip } from '@material-ui/core';
 import StarIcon from '@material-ui/icons/Star';
 import GavelIcon from '@material-ui/icons/Gavel';
 import WarningIcon from '@material-ui/icons/Warning';
+import TranslateIcon from '@material-ui/icons/Translate';
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -66,7 +67,7 @@ function Stats({item, classes}) {
   return <>
   { item.github_stars && <Chip className={classes.chip} size="small" icon={<StarIcon />} label={shortInt(item.github_stars)} title="Github Stars" />}
   { item.license_spdx && <Chip className={classes.chip} size="small" icon={<GavelIcon />} label={shortInt(item.license_spdx)} title={item.license_name || "License"} />}
-  { item.programing_language && <Chip className={classes.chip} size="small" icon={<GavelIcon />} label={item.programing_language} title={"Main Programming Language"} />}
+  { item.programing_language && <Chip className={classes.chip} size="small" icon={<TranslateIcon />} label={item.programing_language} title={"Main Programming Language"} />}
   { item.warnings && item.warnings.length > 0 && <Chip color="secondary" className={classes.chip} size="small" icon={<WarningIcon />} label={item.warnings.length} title={item.warnings.join(" ")} />}
   </>
 }
