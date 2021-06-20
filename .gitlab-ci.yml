@@ -17,8 +17,6 @@ pages:
   before_script:
     # install AWS CLI v2
     # @see https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html
-    - mkdir -p awscli2
-    - cd awscli2
     - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
     - unzip awscliv2.zip
     - ./aws/install
@@ -27,7 +25,6 @@ pages:
     - yarn build-json
     # CI=false does not let the build fail on warnings
     - CI=false yarn build
-    - ls -la
     - aws s3 sync build "s3://${AWS_BUCKET_NAME}"
   artifacts:
     paths:
