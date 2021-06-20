@@ -23,6 +23,7 @@ categories:
     - uri: https://kudo.dev
       github: kudobuilder/kudo
     - github: sbstp/kubie
+      logo: https://raw.githubusercontent.com/sbstp/kubie/master/assets/logo.svg
 
   - name: Amazon AWS
     items:
