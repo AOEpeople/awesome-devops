@@ -4,6 +4,10 @@
 #    yarn build-json
 #
 
+meta:
+  name: Awesome DevOps
+  edit_link: https://gitlab.aoe.com/project/devops-cop/awesome-devops/-/edit/main/awesome-list.yml
+
 categories:
   - name: Containers
     # description: Example Category
