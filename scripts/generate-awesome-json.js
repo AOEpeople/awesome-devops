@@ -12,6 +12,7 @@ const walkCategory = async (category) => {
     if(category.categories) {
         category.categories = await Promise.all(category.categories.map(walkCategory))
     }
+    category.slug = category.name.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'')
     if(category.items) {
         category.items = await Promise.all(category.items.map(enrichItem)).then(allItems => allItems.sort((one, two) => {
             if (one.name.toUpperCase() < two.name.toUpperCase()) { return -1 }

@@ -45,16 +45,16 @@ export default function Category({category, variant}) {
   const classes = useStyles()
 
   return (<div className={classes.root}>
-    <Typography variant="h2" paragraph>{category.name}</Typography>
+    <Typography variant="h2" paragraph id={category.slug} name={category.slug}>{category.name}</Typography>
     { category.description && <Typography variant="subtitle1" paragraph>{category.description}</Typography>}
     { !category.items || category.items.length === 0 ? (
       "No items in this category"
     ) : variant === "tile" ? (
       <Grid container spacing={2}>
-        { category.items.map((item) => <ItemForTile item={item} />) }
+        { category.items.map((item, id) => <ItemForTile key={id} item={item} />) }
       </Grid>
     ) : (
-      category.items.map((item) => <ItemForList item={item} />)
+      category.items.map((item, id) => <ItemForList item={item} key={id} />)
     )}
 
   </div>)

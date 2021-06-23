@@ -13,11 +13,16 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ItemForList({ item }) {
   const classes = useStyles()
+  let name = item.name
+  if (item.warnings && item.warnings.length > 0) {
+    name = <strike>{name}</strike>
+  }
 
   return (
     <Typography>
-      <ExternalLink href={item.uri} className={classes.link}>{item.name}</ExternalLink>{" "}
+      <ExternalLink href={item.uri} className={classes.link}>{name}</ExternalLink>{" "}
       { item.warnings && item.warnings.length > 0 && <><Chip color="default" className={classes.chip} size="small" icon={<WarningIcon />} label={item.warnings.length} title={item.warnings.join(" ")} />{" "}</>}
+      {"– "}
       {item.description || ""}
     </Typography>
   )

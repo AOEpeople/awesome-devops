@@ -3,36 +3,30 @@ import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
-import CameraIcon from '@material-ui/icons/PhotoCamera';
+import MenuIcon from '@material-ui/icons/Menu';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
 import Category from './components/Category'
 import ListIcon from '@material-ui/icons/List';
 import AppsIcon from '@material-ui/icons/Apps';
+import ExternalLink from './components/ExternalLink';
+import EditIcon from '@material-ui/icons/Edit';
+import SearchIcon from '@material-ui/icons/Search';
+import { Drawer, List, ListItem, ListItemText, InputBase } from '@material-ui/core';
+import { fade } from '@material-ui/core';
 
-import awesome from './awesome-list-compiled.json'
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import awesomeJson from './awesome-list-compiled.json'
 
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
@@ -63,47 +57,148 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
+
+  search: {
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: fade(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: fade(theme.palette.common.white, 0.25),
+    },
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(1),
+      width: 'auto',
+    },
+  },
+  searchIcon: {
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inputRoot: {
+    color: 'inherit',
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      width: '12ch',
+      '&:focus': {
+        width: '20ch',
+      },
+    },
+  },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+function valueContains(value, searchTerm) {
+  if (Array.isArray(value)) {
+    return value.some(val => valueContains(val, searchTerm))
+  } else if (value.toLowerCase) {
+    return value.toLowerCase().includes(searchTerm)
+  } else {
+    return Object.values(value).some(val => valueContains(val, searchTerm))
+  }
+}
+
+function filterAwesome(searchTerm) {
+  if (!searchTerm) {
+    return awesomeJson
+  }
+
+  searchTerm = searchTerm.toLowerCase()
+
+  // poor man's deep copy
+  const awesome = JSON.parse(JSON.stringify(awesomeJson))
+
+  awesome.categories = awesome.categories.map(category => {
+    category.items = (category.items || []).filter(item => valueContains(item, searchTerm))
+    return category
+  }).filter(category => category.items && category.items.length > 0)
+
+  return awesome
+}
 
 export default function Album() {
   const [variant, setVariant] = useState("tile")
+  const [navigationOpen, setNavigationOpen] = useState(false)
+  const [searchTerm, setSearchTerm] = useState("")
   const classes = useStyles();
+
+  const filteredAwesome = filterAwesome(searchTerm)
 
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="relative">
+      <AppBar position="fixed">
         <Toolbar>
-          <CameraIcon className={classes.icon} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Album layout
-          </Typography>
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={() => setNavigationOpen(true)}>
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" className={classes.title} noWrap>{filteredAwesome.meta.name}</Typography>
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+              onChange={(el) => setSearchTerm(el.target.value)}
+            />
+          </div>
+          <IconButton
+            aria-label="account of current user"
+            color="inherit"
+            href={filteredAwesome.meta.edit_link} target="_blank" rel="noreferrer noopener"
+          >
+            <EditIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
+      <Drawer anchor="left" open={navigationOpen} onClose={() => setNavigationOpen(false)}>
+        <List>
+          {awesomeJson.categories.map((category, index) => (
+            <ListItem button key={index} onClick={() => {
+              console.log(window.location)
+              setNavigationOpen(false)
+              setTimeout(() => {
+
+                window.location.hash = `#${category.slug}`
+              }, 100)
+            }
+
+              }>
+              <ListItemText primary={category.name}/>
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Album layout
-            </Typography>
+            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>{filteredAwesome.meta.name}</Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Something short and leading about the collection below—its contents, the creator, etc.
-              Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-              entirely.
+              An opinionated collection of awesome links on the topic of DevOps and anything related.
+              Curated by <ExternalLink href="https://aoe.com">AOE GmbH</ExternalLink>.
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
-                    Main call to action
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Secondary action
+                  <Button variant="outlined" color="primary" href={filteredAwesome.meta.edit_link} target="_blank" rel="noreferrer noopener">
+                    You can edit it
                   </Button>
                 </Grid>
               </Grid>
@@ -111,7 +206,7 @@ export default function Album() {
           </Container>
         </div>
 
-        <Container className={classes.cardGrid} maxWidth="md">
+        <Container maxWidth={variant === "item" ? "md" : "xl"}>
           <div className={classes.buttonGroup}>
             <ButtonGroup size="small">
               <IconButton aria-label="tile view" onClick={() => setVariant("tile")} color={variant==="tile" ? "primary" : null}>
@@ -122,18 +217,15 @@ export default function Album() {
               </IconButton>
             </ButtonGroup>
           </div>
-          {awesome.categories.map(category => <Category category={category} variant={variant} />)}
-          </Container>
+            {filteredAwesome.categories.map(category => <Category category={category} variant={variant} />)}
+        </Container>
       </main>
       {/* Footer */}
       <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
+        <Typography variant="h6" align="center" gutterBottom>{filteredAwesome.meta.name}</Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
+          <ExternalLink href="https://openmoji.org/library/#search=sunglass&amp;emoji=1F60E">The Logo</ExternalLink> is licensed <ExternalLink href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-4.0</ExternalLink>.
         </Typography>
-        <Copyright />
       </footer>
       {/* End footer */}
     </React.Fragment>

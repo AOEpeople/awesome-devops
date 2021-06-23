@@ -12,6 +12,7 @@ import StarIcon from '@material-ui/icons/Star';
 import GavelIcon from '@material-ui/icons/Gavel';
 import WarningIcon from '@material-ui/icons/Warning';
 import TranslateIcon from '@material-ui/icons/Translate';
+import ExternalLink from './ExternalLink';
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -51,6 +52,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
+  outdated: {
+    opacity: 0.5,
+    transition: "0.25s opacity",
+    "&:hover,&:focus": {
+      opacity: 1
+    }
+  },
 }));
 
 function shortInt(value) {
@@ -74,14 +82,20 @@ function Stats({item, classes}) {
 
 export default function ItemForTile({ item }) {
   const classes = useStyles()
+  let classNames = classes.card
+  if (item.warnings && item.warnings.length > 0) {
+    classNames += ' ' + classes.outdated
+  }
 
   return (
-    <Grid item xs={12} sm={6} md={4}>
-    <Card className={classes.card}>
+    <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+    <Card className={classNames}>
+      <ExternalLink href={item.uri || item.repo_uri}>
       <CardMedia
         className={classes.cardMedia}
-        image={item.logo}
+        image={item.logo || "/logo512.png"}
       />
+      </ExternalLink>
       <CardContent className={classes.cardContent}>
         <Typography gutterBottom variant="h5" component="h2">
           {item.name}
