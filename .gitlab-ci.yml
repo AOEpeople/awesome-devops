@@ -6,10 +6,10 @@ default:
   image: node:lts
 
 stages:
-  - publish
+  - build
 
 pages:
-  stage: publish
+  stage: build
   before_script: []
   only:
     - main
