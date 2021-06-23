@@ -16,19 +16,27 @@ categories:
     - github: wagoodman/dive
     - github: GoogleContainerTools/kaniko
 
-  - name: Kuberenets
+  - name: Kubernetes
     items:
     - github: lensapp/lens
     - uri: https://servicemesh.es
     - uri: https://learnk8s.io/kubernetes-resources#service-meshes
     - uri: https://docs.google.com/spreadsheets/d/1Bxf8VW9n-YyHeBiKdXt6zytOgw2cQlsDnK1gLUvsZ4A/edit#gid=907731238
+      description: Comparison of Service Meshes – Istio, Linkerd, Kuma, Consul, AWS App Mesh, Nginx Service Mesh
     - uri: https://www.telepresence.io
       github: telepresenceio/telepresence
     - uri: https://kudo.dev
       github: kudobuilder/kudo
     - github: sbstp/kubie
       logo: https://raw.githubusercontent.com/sbstp/kubie/master/assets/logo.svg
-
+    - uri: https://codeberg.org/hjacobs/kube-ops-view
+  - name: Kubernetes Security
+    items:
+    - uri: https://www.cisecurity.org/benchmark/kubernetes/
+    - uri: https://github.com/kubernetes/website/issues/27515
+      name: Kubernetes Hardening Guide
+    - uri: https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/
+    - github: falcosecurity/falco
   - name: Amazon AWS
     items:
     - github: kreuzwerker/awsu
@@ -38,6 +46,7 @@ categories:
     - uri: https://chrome.google.com/webstore/detail/aws-extend-switch-roles/jpmkfafbacpgapdghgdpembnojdlgkdl
       github: tilfinltd/aws-extend-switch-roles
     - github: aws-controllers-k8s/community
+      name: AWS Controllers for Kubernetes
     - uri: https://www.eksworkshop.com
 
   - name: Zero Trust
@@ -45,7 +54,22 @@ categories:
     - github: oauth2-proxy/oauth2-proxy
     - uri: https://goteleport.com
     - uri: http://sawers.com/blog/aws-session-manager-a-better-way-to-ssh/
+    - uri: https://www.tremolosecurity.com/post/kubernetes-dont-use-certificates-for-authentication
 
   - name: Application Security
     items:
     - uri: https://snyk.io
+    - uri: https://sigstore.dev
+      logo: https://avatars.githubusercontent.com/u/71096353?v=4
+      description: Container signing. "Let's encrypt for Containers". Early stage of development.
+      github: sigstore/cosign
+    - github: liggitt/audit2rbac
+
+  - name: Other
+    items:
+    - uri: https://backstage.io
+      github: backstage/backstage
+    - uri: https://crossplane.io
+      github: crossplane/crossplane
+    - uri: https://cachethq.io
+      github: CachetHQ/Cachet
