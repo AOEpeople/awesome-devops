@@ -8,7 +8,6 @@ default:
 stages:
   - publish
 
-
 pages:
   stage: publish
   before_script: []
@@ -26,6 +25,6 @@ pages:
     # CI=false does not let the build fail on warnings
     - CI=false yarn build
     - aws s3 sync build "s3://${AWS_BUCKET_NAME}"
-  artifacts:
-    paths:
-      - build
+#  artifacts:
+#    paths:
+#      - build
