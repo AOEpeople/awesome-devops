@@ -8,7 +8,7 @@ default:
 stages:
   - build
 
-pages:
+build:
   stage: build
   before_script: []
   only:
