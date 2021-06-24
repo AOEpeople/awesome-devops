@@ -33,8 +33,10 @@ categories:
   - name: Kubernetes Security
     items:
     - uri: https://www.cisecurity.org/benchmark/kubernetes/
+      description: Kubernetes Security Benchmark
     - uri: https://github.com/kubernetes/website/issues/27515
       name: Kubernetes Hardening Guide
+      description: Work in progress
     - uri: https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/
     - github: falcosecurity/falco
   - name: Amazon AWS
