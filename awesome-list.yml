@@ -39,6 +39,8 @@ categories:
       description: Work in progress
     - uri: https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/
     - github: falcosecurity/falco
+    - github: drwetter/testssl.sh
+      description: test suite to rate quality of SSL by best practices
   - name: Amazon AWS
     items:
     - github: kreuzwerker/awsu
