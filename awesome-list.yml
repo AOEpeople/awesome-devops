@@ -41,6 +41,7 @@ categories:
     - github: falcosecurity/falco
     - github: drwetter/testssl.sh
       description: test suite to rate quality of SSL by best practices
+    - github: AOEpeople/lambda_token_auth
   - name: Amazon AWS
     items:
     - github: kreuzwerker/awsu
