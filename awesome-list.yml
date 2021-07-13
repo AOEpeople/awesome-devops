@@ -53,6 +53,7 @@ categories:
     - github: aws-controllers-k8s/community
       name: AWS Controllers for Kubernetes
     - uri: https://www.eksworkshop.com
+    - github: iann0036/iamlive
 
   - name: Zero Trust
     items:
