@@ -30,6 +30,8 @@ categories:
     - github: sbstp/kubie
       logo: https://raw.githubusercontent.com/sbstp/kubie/master/assets/logo.svg
     - uri: https://codeberg.org/hjacobs/kube-ops-view
+    - github: doitintl/kube-no-trouble
+      description: Tool to check for deprecated resources running on the cluster.
   - name: Kubernetes Security
     items:
     - uri: https://www.cisecurity.org/benchmark/kubernetes/
