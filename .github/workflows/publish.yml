@@ -5,6 +5,7 @@ on:
       - 'main'
 env:
   NODEJS_VERSION: 14
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 defaults:
   run:
     shell: bash
