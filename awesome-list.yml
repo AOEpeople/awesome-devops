@@ -72,6 +72,8 @@ categories:
       description: Container signing. "Let's encrypt for Containers". Early stage of development.
       github: sigstore/cosign
     - github: liggitt/audit2rbac
+    - uri: https://docs.renovatebot.com/
+      github: renovatebot/renovate
 
   - name: Infrastructure as code
     items:
