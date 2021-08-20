@@ -57,13 +57,13 @@ const githubToken = process.env?.GITHUB_TOKEN
 const githubUsername = process.env?.GITHUB_USERNAME
 if (githubToken) {
     if (githubUsername) {
-        // if: personal github token
+        console.info("Using Github API with personal access token.")
         githubOptions.auth = {
             username: githubUsername,
             password: githubToken,
         }
     } else {
-        // if: bearer token from github actions
+        console.info("Using Github API bearer token.")
         githubOptions.headers["Authorization"] = `Bearer ${githubToken}`
     }
 }
