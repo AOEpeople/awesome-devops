@@ -73,6 +73,12 @@ categories:
       github: sigstore/cosign
     - github: liggitt/audit2rbac
 
+  - name: Infrastructure as code
+    items:
+    - github: gruntwork-io/terragrunt
+    - github: bridgecrewio/checkov
+    - github: accurics/terrascan
+
   - name: Other
     items:
     - uri: https://backstage.io
