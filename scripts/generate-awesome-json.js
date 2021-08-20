@@ -63,8 +63,8 @@ if (githubToken) {
             password: githubToken,
         }
     } else {
-        console.info("Using Github API bearer token.")
-        githubOptions.headers["Authorization"] = `Bearer ${githubToken}`
+        console.info("Using Github API with bearer token.")
+        githubOptions.headers["authorization"] = `Bearer ${githubToken}`
     }
 }
 
