@@ -34,8 +34,17 @@ jobs:
           yarn build-json
           # CI=false does not let the build fail on warnings
           CI=false yarn build
+      - name: Commit Github Pages
+        run: |
+          git init
+          git add -A
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m 'rendered SPA'
+        working-directory: ./build
       - name: Push Pages
         uses: ad-m/github-push-action@master
         with:
           directory: build
           branch: gh-pages
+          force: true
