@@ -32,6 +32,9 @@ categories:
     - uri: https://codeberg.org/hjacobs/kube-ops-view
     - github: doitintl/kube-no-trouble
       description: Tool to check for deprecated resources running on the cluster.
+    - github: ahmetb/kubectx
+      description: Tools for fast context or namespace switches
+
   - name: Kubernetes Security
     items:
     - uri: https://www.cisecurity.org/benchmark/kubernetes/
