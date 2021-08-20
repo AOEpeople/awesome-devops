@@ -2,7 +2,7 @@
 
 An Awesome List of DevOps tools and topics curated by AOE GmbH.
 
-:point_right: https://d2vnfobepp3kui.cloudfront.net :point_left:
+:point_right:  :point_left:
 
 ## How to add
 

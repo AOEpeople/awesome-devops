@@ -1,0 +1,38 @@
+name: publish
+on:
+  push:
+    branches:
+      - 'main'
+env:
+  NODEJS_VERSION: 14
+defaults:
+  run:
+    shell: bash
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the source code
+        uses: actions/checkout@v2
+      - name: Use node.js ${{ env.NODEJS_VERSION }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.NODEJS_VERSION }}
+      - uses: actions/cache@v1
+        id: yarn-cache
+        with:
+          path: .yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Generate parameters
+        run: |
+          yarn install --frozen-lockfile --cache-folder .yarn
+          yarn build-json
+          # CI=false does not let the build fail on warnings
+          CI=false yarn buildTAG=""
+      - name: Push Pages
+        uses: ad-m/github-push-action@master
+        with:
+          directory: build
+          branch: gh-pages
