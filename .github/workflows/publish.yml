@@ -33,7 +33,7 @@ jobs:
           yarn install --frozen-lockfile --cache-folder .yarn
           yarn build-json
           # CI=false does not let the build fail on warnings
-          CI=false yarn buildTAG=""
+          CI=false yarn build
       - name: Push Pages
         uses: ad-m/github-push-action@master
         with:
