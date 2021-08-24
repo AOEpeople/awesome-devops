@@ -2,7 +2,7 @@
 
 An Awesome List of DevOps tools and topics curated by AOE GmbH.
 
-:point_right:  :point_left:
+:point_right: https://awesome-devops.aoepeople.com :point_left:
 
 ## How to add
 
