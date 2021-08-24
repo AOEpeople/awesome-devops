@@ -6,7 +6,7 @@
 
 meta:
   name: Awesome DevOps
-  edit_link: https://gitlab.aoe.com/project/devops-cop/awesome-devops/-/edit/main/awesome-list.yml
+  edit_link: https://github.com/AOEpeople/awesome-devops/edit/main/awesome-list.yml
 
 categories:
   - name: Containers
