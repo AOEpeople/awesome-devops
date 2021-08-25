@@ -94,5 +94,7 @@ categories:
       github: crossplane/crossplane
     - uri: https://cachethq.io
       github: CachetHQ/Cachet
+    - uri: https://healthchecks.io/
+      github: healthchecks/healthchecks
     - github: cheat/cheat
     - uri: https://explainshell.com/
