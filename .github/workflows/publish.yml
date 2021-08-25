@@ -34,6 +34,7 @@ jobs:
           yarn build-json
           # CI=false does not let the build fail on warnings
           CI=false yarn build
+          echo "awesome-devops.aoepeople.com" > build/CNAME
       - name: Commit Github Pages
         run: |
           git init
