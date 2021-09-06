@@ -15,6 +15,7 @@ categories:
     - github: containers/skopeo
     - github: wagoodman/dive
     - github: GoogleContainerTools/kaniko
+    - github: containerd/nerdctl
 
   - name: Kubernetes
     items:
@@ -34,6 +35,8 @@ categories:
       description: Tool to check for deprecated resources running on the cluster.
     - github: ahmetb/kubectx
       description: Tools for fast context or namespace switches
+    - uri: https://krew.sigs.k8s.io/plugins/
+      description: List of kubectl plugins. You can optionally use krew to keep them up to date.
 
   - name: Kubernetes Security
     items:
