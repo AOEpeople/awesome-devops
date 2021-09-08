@@ -51,6 +51,8 @@ categories:
       description: test suite to rate quality of SSL by best practices
     - github: AOEpeople/lambda_token_auth
     - github: cmacrae/kove
+    - uri: https://editor.cilium.io
+      description: Basic Visualization of Kubernetes Pod Network Policies
 
   - name: Amazon AWS
     items:
