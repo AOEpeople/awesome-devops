@@ -37,6 +37,8 @@ categories:
       description: Tools for fast context or namespace switches
     - uri: https://krew.sigs.k8s.io/plugins/
       description: List of kubectl plugins. You can optionally use krew to keep them up to date.
+    - uri: https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/
+      github: kubernetes-sigs/kustomize
 
   - name: Kubernetes Security
     items:
