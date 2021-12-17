@@ -55,6 +55,8 @@ categories:
     - github: cmacrae/kove
     - uri: https://editor.cilium.io
       description: Basic Visualization of Kubernetes Pod Network Policies
+    - github: kyverno/kyverno
+      uri: https://kyverno.io
 
   - name: Amazon AWS
     items:
