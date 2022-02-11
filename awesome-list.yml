@@ -109,3 +109,5 @@ categories:
     - uri: https://explainshell.com/
     - uri: https://awesome-prometheus-alerts.grep.to
       github: samber/awesome-prometheus-alerts
+    - uri: https://keel.sh/
+      github: https://github.com/keel-hq/keel
