@@ -60,9 +60,6 @@ categories:
 
   - name: Amazon AWS
     items:
-    - github: kreuzwerker/awsu
-    - uri: https://awsu.me
-      github: trek10inc/awsume
     - uri: https://github.com/terraform-aws-modules
     - uri: https://chrome.google.com/webstore/detail/aws-extend-switch-roles/jpmkfafbacpgapdghgdpembnojdlgkdl
       github: tilfinltd/aws-extend-switch-roles
@@ -94,6 +91,14 @@ categories:
     - github: gruntwork-io/terragrunt
     - github: bridgecrewio/checkov
     - github: accurics/terrascan
+
+  - name: Command line
+    items:
+    - github: sharkdp/bat
+    - github: junegunn/fzf
+    - github: kreuzwerker/awsu
+    - uri: https://awsu.me
+      github: trek10inc/awsume
 
   - name: Other
     items:
