@@ -85,6 +85,9 @@ categories:
     - github: liggitt/audit2rbac
     - uri: https://docs.renovatebot.com/
       github: renovatebot/renovate
+    - uri: https://github.com/anchore/grype
+      github: anchore/grype
+    
 
   - name: Infrastructure as code
     items:
