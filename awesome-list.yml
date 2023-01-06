@@ -119,3 +119,5 @@ categories:
       github: samber/awesome-prometheus-alerts
     - uri: https://keel.sh/
       github: keel-hq/keel
+    - github: simeji/jid
+    - uri: https://slsa.dev/get-started#reaching-slsa-level-1
