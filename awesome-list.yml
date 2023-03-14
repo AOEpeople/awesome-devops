@@ -124,4 +124,5 @@ categories:
     - uri: https://slsa.dev/get-started#reaching-slsa-level-1
     - github: github.com/Logiraptor/helm-post-renderer-examples
     - uri: https://sdk.operatorframework.io/docs/overview/operator-capabilities/
+    - github: cloudflare/pint
     
