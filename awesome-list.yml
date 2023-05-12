@@ -89,6 +89,8 @@ categories:
       github: renovatebot/renovate
     - uri: https://github.com/anchore/grype
       github: anchore/grype    
+    - github: anchore/syft    
+    - github: dependencyTrack/dependency-track
 
   - name: Infrastructure as code
     items:
@@ -125,4 +127,4 @@ categories:
     - github: github.com/Logiraptor/helm-post-renderer-examples
     - uri: https://sdk.operatorframework.io/docs/overview/operator-capabilities/
     - github: cloudflare/pint
-    
+    - github: metalbear-co/mirrord
