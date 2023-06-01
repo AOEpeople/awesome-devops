@@ -4,7 +4,7 @@ on:
     branches:
       - 'main'
 env:
-  NODEJS_VERSION: 14
+  NODEJS_VERSION: 16
 defaults:
   run:
     shell: bash
