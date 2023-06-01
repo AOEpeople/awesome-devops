@@ -128,3 +128,5 @@ categories:
     - uri: https://sdk.operatorframework.io/docs/overview/operator-capabilities/
     - github: cloudflare/pint
     - github: metalbear-co/mirrord
+    - github: devspace-sh/devspace
+    - github: cashapp/hermit
