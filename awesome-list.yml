@@ -122,6 +122,7 @@ categories:
     - uri: https://explainshell.com/
     - uri: https://awesome-prometheus-alerts.grep.to
       github: samber/awesome-prometheus-alerts
+    - github: stakater/Reloader
     - uri: https://keel.sh/
       github: keel-hq/keel
     - github: simeji/jid
