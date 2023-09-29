@@ -20,6 +20,8 @@ categories:
 
   - name: Kubernetes
     items:
+    - github: kdash-rs/kdash
+    - github: robusta-dev/krr
     - github: lensapp/lens
     - github: derailed/k9s
     - uri: https://servicemesh.es
