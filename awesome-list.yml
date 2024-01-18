@@ -133,3 +133,4 @@ categories:
     - github: metalbear-co/mirrord
     - github: devspace-sh/devspace
     - github: cashapp/hermit
+    - github: hadolint/hadolint
