@@ -43,6 +43,12 @@ categories:
       description: List of kubectl plugins. You can optionally use krew to keep them up to date.
     - uri: https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/
       github: kubernetes-sigs/kustomize
+    - github: layer5io/meshery
+      uri: https://meshery.io
+      description: A cloud-native management plane for Kubernetes and service meshes.
+    - uri: https://kanvas.new
+      description: A collaborative designer and operator for cloud-native infrastructure.
+
 
   - name: Kubernetes Security
     items:
