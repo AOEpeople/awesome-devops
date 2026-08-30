@@ -102,6 +102,8 @@ categories:
 
   - name: Command line
     items:
+    - github: vostride/agent-qa
+      description: Source-available CLI and MCP tool for natural-language web and mobile testing with replayable evidence; FSL-1.1-ALv2, converting to Apache-2.0 after two years.
     - github: sharkdp/bat
     - github: junegunn/fzf
     - github: kreuzwerker/awsu
